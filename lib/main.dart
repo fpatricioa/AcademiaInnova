@@ -5,6 +5,8 @@ import 'package:academiainnova/slider.dart';
 import 'package:academiainnova/theme.dart';
 import 'package:flutter/material.dart';
 
+import 'Paginas/inicioLogin.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -123,7 +125,7 @@ class _InicioAppState extends State<InicioApp> {
                                   context,
                                   MaterialPageRoute(
                                     //builder: (context) => LoginPage(),
-                                    builder: (context) => RegisterPage(),
+                                    builder: (context) => InicioLogin(),
                                   ),
                                 );
                               },

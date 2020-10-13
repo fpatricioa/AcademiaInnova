@@ -1,4 +1,5 @@
 import 'package:academiainnova/Behaviors/hiddenScrollBehavoir.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -25,6 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: ListView(
               children: <Widget>[
                 //el listView se utiliza para el scroll para ver todo el contenido
+                Image.asset('assets/image/laptop.png'),
                 FlutterLogo(
                   style: FlutterLogoStyle.markOnly,
                   size: 200.0,
