@@ -127,8 +127,12 @@ class _InicioLoginState extends State<InicioLogin> {
                 ),
                 child: FlatButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage()
+                      ),
+                    );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -192,8 +196,7 @@ class _InicioLoginState extends State<InicioLogin> {
             colors: [
               Color(0xFFFF7B43),
               Color(0xFFF5326F),
-            ]
-          ),
+            ]),
       ),
     );
   }
