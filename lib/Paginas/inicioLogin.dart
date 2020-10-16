@@ -18,9 +18,12 @@ class _InicioLoginState extends State<InicioLogin> {
           child: Column(
             children: <Widget>[
               Icon(
-                FontAwesomeIcons.heartBroken,
+                FontAwesomeIcons.graduationCap,
                 color: Colors.red,
                 size: 70.0,
+              ),
+              SizedBox(
+                height: 20.0,
               ),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -129,9 +132,7 @@ class _InicioLoginState extends State<InicioLogin> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage()
-                      ),
+                      MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
                   child: Row(
@@ -194,8 +195,12 @@ class _InicioLoginState extends State<InicioLogin> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFFFF7B43),
-              Color(0xFFF5326F),
+              //Color(0xFFFF7B43),
+              //Color(0xFFF5326F),
+              Color(0xFF3594DD),
+              Color(0xFF4563DB),
+              Color(0xFF5036D5),
+              Color(0xFF5B16D0),
             ]),
       ),
     );

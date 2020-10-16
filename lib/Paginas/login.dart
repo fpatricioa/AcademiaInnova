@@ -1,8 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
 import 'package:academiainnova/Paginas/contantes.dart';
+import 'package:academiainnova/Paginas/register.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -91,10 +90,11 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: FlatButton(
-        onPressed: () => print('Forgot password button pressed'),
+        onPressed: () =>
+            print('El botón de la contraseña olvidada fue presionado'),
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
-          'Forgot Password',
+          'Olvidé la contraseña',
           style: kLabelStyle,
         ),
       ),
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Text(
-            'Remenber Me',
+            'Recordarme',
             style: kLabelStyle,
           )
         ],
@@ -134,14 +134,14 @@ class _LoginPageState extends State<LoginPage> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login button presed'),
+        onPressed: () => print('Botón de acceso presionado'),
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'ACCEDER',
           style: TextStyle(
               color: Color(0xFF527DAA),
               letterSpacing: 1.5,
@@ -149,6 +149,33 @@ class _LoginPageState extends State<LoginPage> {
               fontWeight: FontWeight.bold,
               fontFamily: 'OpenSans'),
         ),
+      ),
+    );
+  }
+
+  Widget _cargarCrearCuenta() {
+    return Container(
+      height: 90.0,
+      child: Row(
+        children: [
+          Text(
+            '¿No tienes una cuenta?',
+            style: TextStyle(color: Colors.white, fontSize: 18.0),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()));
+            },
+            child: Text(
+              'Regístrese',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -166,8 +193,12 @@ class _LoginPageState extends State<LoginPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFFFF7B43),
-                  Color(0xFFF5326F),
+                  //Color(0xFFFF7B43),
+                  //Color(0xFFF5326F),
+                  Color(0xFF3594DD),
+                  Color(0xFF4563DB),
+                  Color(0xFF5036D5),
+                  Color(0xFF5B16D0),
                 ],
                 //stops: [0.1, 0.4]
               ),
@@ -200,6 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                   _cargarOlvidoContrasenaBtn(),
                   _cargarRemenberMeCheckbox(),
                   _cargarLoginBtn(),
+                  _cargarCrearCuenta(),
                 ],
               ),
             ),
