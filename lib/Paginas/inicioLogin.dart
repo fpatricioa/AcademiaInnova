@@ -128,12 +128,9 @@ class _InicioLoginState extends State<InicioLogin> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: FlatButton(
+                child: OutlineButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
+                    _pushPage(context, LoginPage());
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -166,12 +163,9 @@ class _InicioLoginState extends State<InicioLogin> {
                         decoration: TextDecoration.underline,
                       ),
                     ),
-                    FlatButton(
+                    OutlineButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterPage()));
+                        _pushPage(context, RegisterPage());
                       },
                       child: Text(
                         'Registrate',
@@ -205,4 +199,10 @@ class _InicioLoginState extends State<InicioLogin> {
       ),
     );
   }
+}
+
+void _pushPage(BuildContext context, Widget page) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (_) => page),
+  );
 }

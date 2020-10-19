@@ -1,7 +1,10 @@
 import 'dart:ui';
-import 'package:flutter/material.dart';
 import 'package:academiainnova/Paginas/contantes.dart';
 import 'package:academiainnova/Paginas/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:academiainnova/universidad_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -9,16 +12,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _remenberMe = false;
+  //creamos dos campos (variables para usuraio y password)
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final TextEditingController _passwordController = TextEditingController();
 
-  Widget _cargarEmailTF() {
+  Widget _cargarEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          'Email',
-          style: kLabelStyle,
-        ),
         SizedBox(
           height: 20.0, //espacio
         ),
@@ -26,7 +30,8 @@ class _LoginPageState extends State<LoginPage> {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: TextField(
+          child: TextFormField(
+            controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.white,
@@ -39,23 +44,25 @@ class _LoginPageState extends State<LoginPage> {
                 Icons.email,
                 color: Colors.white,
               ),
-              hintText: 'Ingresa tu Email',
+              hintText: 'Ingresar Email',
               hintStyle: kHintTextStyle,
             ),
+            validator: (String value) {
+              if (value.isEmpty) {
+                return 'Por favor ingrese algun texto';
+              }
+              return null;
+            },
           ),
         ),
       ],
     );
   }
 
-  Widget _cargarContrasenaTF() {
+  Widget _cargarContrasena() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          'Contraseña',
-          style: kLabelStyle,
-        ),
         SizedBox(
           height: 20.0, //espacio
         ),
@@ -63,7 +70,8 @@ class _LoginPageState extends State<LoginPage> {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: TextField(
+          child: TextFormField(
+            controller: _passwordController,
             obscureText: true,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
@@ -80,6 +88,12 @@ class _LoginPageState extends State<LoginPage> {
               hintText: 'Ingresa tu Contraseña',
               hintStyle: kHintTextStyle,
             ),
+            validator: (String value) {
+              if (value.isEmpty) {
+                return 'Por favor ingrese una contraseña';
+              }
+              return null;
+            },
           ),
         ),
       ],
@@ -101,40 +115,17 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _cargarRemenberMeCheckbox() {
-    return Container(
-      height: 20.0,
-      child: Row(
-        children: <Widget>[
-          Theme(
-            data: ThemeData(unselectedWidgetColor: Colors.white),
-            child: Checkbox(
-              value: _remenberMe,
-              checkColor: Colors.green,
-              activeColor: Colors.white,
-              onChanged: (value) {
-                setState(() {
-                  _remenberMe = value;
-                });
-              },
-            ),
-          ),
-          Text(
-            'Recordarme',
-            style: kLabelStyle,
-          )
-        ],
-      ),
-    );
-  }
-
   Widget _cargarLoginBtn() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25.0),
+      padding: EdgeInsets.symmetric(vertical: 20.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Botón de acceso presionado'),
+        onPressed: () async {
+          if (_formKey.currentState.validate()) {
+            _signInWithEmailAndPassword();
+          }
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -155,8 +146,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _cargarCrearCuenta() {
     return Container(
-      height: 90.0,
+      height: 30.0,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             '¿No tienes una cuenta?',
@@ -168,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(builder: (context) => RegisterPage()));
             },
             child: Text(
-              'Regístrese',
+              'Registrate',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
@@ -205,39 +197,71 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
+            alignment: Alignment.center,
             height: double.infinity,
-            child: SingleChildScrollView(
-              physics: AlwaysScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 120.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'INICIAR SESIÓN',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'OpenSans',
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 30.0, //espacio
-                  ),
-                  _cargarEmailTF(),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  _cargarContrasenaTF(),
-                  _cargarOlvidoContrasenaBtn(),
-                  _cargarRemenberMeCheckbox(),
-                  _cargarLoginBtn(),
-                  _cargarCrearCuenta(),
-                ],
+            child: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'INICIAR SESIÓN',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'OpenSans',
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 30.0, //espacio
+                    ),
+                    _cargarEmail(),
+                    _cargarContrasena(),
+                    _cargarOlvidoContrasenaBtn(),
+                    _cargarLoginBtn(),
+                    _cargarCrearCuenta(),
+                  ],
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  void _signInWithEmailAndPassword() async {
+    try {
+      final User user = (await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      ))
+          .user;
+      if (!user.emailVerified) {
+        await user.sendEmailVerification();
+      }
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+        return UniversidadPage(
+          user: user,
+        );
+      }));
+    } catch (e) {
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("Failed to sign in with Email & Password"),
+      ));
+    }
+  }
+
+  void _signOut() async {
+    await _auth.signOut();
   }
 }
