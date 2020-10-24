@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "855797418613",
+    "firebase_url": "https://academiainnova-1bd3f.firebaseio.com",
+    "project_id": "academiainnova-1bd3f",
+    "storage_bucket": "academiainnova-1bd3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855797418613:android:635055ec287258c049863c",
+        "android_client_info": {
+          "package_name": "com.example.academiainnova"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855797418613-oj74c60nqm1q0s9cfbih5u9a6ctj8fvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs4Tpol2Mc7Vi6ciRV2V_IrgjqQZr62gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855797418613-oj74c60nqm1q0s9cfbih5u9a6ctj8fvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

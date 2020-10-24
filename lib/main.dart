@@ -1,11 +1,14 @@
-import 'package:academiainnova/Paginas/login.dart';
-import 'package:academiainnova/Paginas/register.dart';
+import 'package:academiainnova/Paginas/inicioLogin.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:academiainnova/routes.dart';
 import 'package:academiainnova/slider.dart';
 import 'package:academiainnova/theme.dart';
-import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -14,6 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner:
+          false, //esto es para ocultar la cinta de debug
       title: 'ACADEMIA',
       home: rootPage, //esta clase lo creamos bajo
       routes: buildAppRoutes(),
@@ -122,8 +127,7 @@ class _InicioAppState extends State<InicioApp> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    //builder: (context) => LoginPage(),
-                                    builder: (context) => RegisterPage(),
+                                    builder: (context) => InicioLogin(),
                                   ),
                                 );
                               },
