@@ -1,5 +1,10 @@
+<<<<<<< HEAD:lib/LoginRegister/inicioLogin.dart
 import 'package:academiainnova/LoginRegister/login.dart';
 import 'package:academiainnova/LoginRegister/register.dart';
+=======
+import 'login.dart';
+import 'register.dart';
+>>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b:lib/Paginas/inicioLogin.dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,12 +16,25 @@ class InicioLogin extends StatefulWidget {
 class _InicioLoginState extends State<InicioLogin> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SafeArea(
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF4563DB),
+                Color(0xFF5B16D0),
+                Color(0xFFF5326F),
+                Color(0xFFFF7B43),
+                //Color(0xFF3594DD),
+                //Color(0xFF5036D5),
+              ]),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 40.0),
           child: Column(
-            children: <Widget>[
+            children: [
               Icon(
                 FontAwesomeIcons.graduationCap,
                 color: Colors.red,
@@ -75,7 +93,7 @@ class _InicioLoginState extends State<InicioLogin> {
                       size: 25.0,
                     ),
                     Text(
-                      '| Regístrate con facebook',
+                      ' | Regístrate con facebook',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
@@ -101,12 +119,12 @@ class _InicioLoginState extends State<InicioLogin> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(
-                      FontAwesomeIcons.twitter,
+                      FontAwesomeIcons.google,
                       color: Colors.blue,
                       size: 25.0,
                     ),
                     Text(
-                      '| Regístrate con twitter',
+                      ' | Regístrate con Google',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
@@ -118,7 +136,7 @@ class _InicioLoginState extends State<InicioLogin> {
               ),
               SizedBox(
                 height: 20.0,
-              ), //esta linea de codigo es hacer espacio entre widget o botones
+              ),
               Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 4.0,
@@ -128,7 +146,7 @@ class _InicioLoginState extends State<InicioLogin> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: OutlineButton(
+                child: FlatButton(
                   onPressed: () {
                     _pushPage(context, LoginPage());
                   },
@@ -155,17 +173,16 @@ class _InicioLoginState extends State<InicioLogin> {
                 child: Row(
                   children: [
                     Text(
-                      '¿Ya tienes una cuenta? ',
+                      '¿No tienes una cuenta? ',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
                       ),
                     ),
                     OutlineButton(
                       onPressed: () {
-                        _pushPage(context, RegisterPage());
+                        _pushPage(context, RegisterPage()); //cambiar antes del push RegisterPage
                       },
                       child: Text(
                         'Registrate',
@@ -183,19 +200,6 @@ class _InicioLoginState extends State<InicioLogin> {
             ],
           ),
         ),
-      ),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              //Color(0xFFFF7B43),
-              //Color(0xFFF5326F),
-              Color(0xFF3594DD),
-              Color(0xFF4563DB),
-              Color(0xFF5036D5),
-              Color(0xFF5B16D0),
-            ]),
       ),
     );
   }

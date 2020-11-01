@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import 'package:academiainnova/LoginRegister/inicioLogin.dart';
+=======
+import 'package:academiainnova/LoginRegister/login.dart';
+import 'package:academiainnova/Menu_sidebar/perfil.dart';
+import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
+import 'package:academiainnova/ModuloCursos/Matem%C3%A1tica.dart';
+
+import 'LoginRegister/inicioLogin.dart';
+>>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:academiainnova/routes.dart';
-import 'package:academiainnova/slider.dart';
-import 'package:academiainnova/theme.dart';
+import 'routes.dart';
+import 'slider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +21,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  Widget rootPage = InicioApp();
+  Widget rootPage =  Curso(); //cambiar a InicioApp antes de push 
+  //Widget rootPage = PerfilPage();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +31,6 @@ class MyApp extends StatelessWidget {
       title: 'ACADEMIA',
       home: rootPage, //esta clase lo creamos bajo
       routes: buildAppRoutes(),
-      theme: buildAppTheme(),
     );
   }
 }
@@ -41,19 +49,27 @@ class _InicioAppState extends State<InicioApp> {
   List<Widget> _pages = [
     SliderPage(
       //este SliderPage viene de slider.dart ahi esta declarado
-      title: "Poner titulo aqui",
-      descripcion: "Aqui ponemos una descripcion relacionado con el tema",
-      image: "assets/1.svg",
+      title: "SOLO EL LOGO",
+      descripcion: "",
+      image: "assets/image/cat.png",
+    ),
+    SliderPage(
+      //este SliderPage viene de slider.dart ahi esta declarado
+      title: "Academia Innova",
+      descripcion: "El mundo es la plataforma mas llamativa y apreciada",
+      image: "assets/image/laptop.png",
+    ),
+    SliderPage(
+      title: 'Academia innova',
+      descripcion:
+          'Es una plataforma tecnologica para el nivel secundaria y preparatoria',
+      image: 'assets/image/ofina-trabajo.png',
     ),
     SliderPage(
       title: 'Poner titulo aqui',
-      descripcion: 'Aqui ponemos una descripcion relacionado con el tema',
-      image: 'assets/2.svg',
-    ),
-    SliderPage(
-      title: 'Poner titulo aqui',
-      descripcion: 'Aqui ponemos una descripcion relacionado con el tema',
-      image: 'assets/3.svg',
+      descripcion:
+          'Contamos con un excelente plana de docentes, y las mejores herramientas para el aprendizaje',
+      image: 'assets/image/equipo-remoto.png',
     ),
   ]; //siempre despues de corchete cerrar con punto y coma ojo pero en <widget> solo cierra con coma
 
@@ -117,6 +133,7 @@ class _InicioAppState extends State<InicioApp> {
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(35),
                   ),
+
                   child: (_currentPage == (_pages.length - 1))
                       ? Container(
                           width: size.width * 0.8,

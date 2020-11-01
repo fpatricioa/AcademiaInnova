@@ -1,10 +1,16 @@
 import 'dart:ui';
+<<<<<<< HEAD:lib/LoginRegister/register.dart
 import 'package:academiainnova/LoginRegister/contantes.dart';
 import 'package:academiainnova/LoginRegister/login.dart';
+=======
+import 'package:academiainnova/LoginRegister/Bienvenida.dart';
+
+import 'contantes.dart';
+import 'login.dart';
+>>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b:lib/Paginas/register.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:academiainnova/universidad_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -297,7 +303,7 @@ class _RegisterPageState extends State<RegisterPage> {
       await user.updateProfile(displayName: _displayName.text);
       final user1 = _auth.currentUser;
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => UniversidadPage(
+          builder: (context) => BienvenidaPage(
                 user: user1,
               )));
     } else {

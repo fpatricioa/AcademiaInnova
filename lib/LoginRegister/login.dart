@@ -1,10 +1,17 @@
 import 'dart:ui';
+<<<<<<< HEAD:lib/LoginRegister/login.dart
 import 'package:academiainnova/LoginRegister/contantes.dart';
 import 'package:academiainnova/LoginRegister/register.dart';
+=======
+import 'package:academiainnova/LoginRegister/Bienvenida.dart';
+import 'package:academiainnova/Menu_sidebar/dashboard.dart';
+import 'package:academiainnova/Menu_sidebar/drawerScreen.dart';
+import 'contantes.dart';
+import 'register.dart';
+>>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b:lib/Paginas/login.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:academiainnova/universidad_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,8 +23,9 @@ class _LoginPageState extends State<LoginPage> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _passwordController = TextEditingController();
+  final items = <Widget>[DashboardPage(), DrawerScreen()];
 
   Widget _cargarEmail() {
     return Column(
@@ -250,13 +258,13 @@ class _LoginPageState extends State<LoginPage> {
         await user.sendEmailVerification();
       }
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
-        return UniversidadPage(
+        return BienvenidaPage(
           user: user,
         );
       }));
     } catch (e) {
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Email & Password"),
+        content: Text("Error de Usuario & contraseña"),
       ));
     }
   }
