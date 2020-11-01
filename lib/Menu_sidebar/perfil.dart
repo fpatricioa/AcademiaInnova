@@ -11,21 +11,57 @@ class PerfilPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff09031d),
-      appBar: AppBar(
-        title: Text('Perfil')
-      ),
+      appBar: AppBar(title: Text('Perfil')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
+                padding: const EdgeInsets.only(left: 20.0, top: 7),
+                child: CircleAvatar(
+                  radius: 35,
+                  backgroundImage: AssetImage('assets/image/usuario.png'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Fray Patricio',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28,
+                          color: Colors.white),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                            size: 17,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              'Apreciamos tu coraje',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  wordSpacing: 2,
+                                  letterSpacing: 4),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
                 ),
               )
             ],
