@@ -177,7 +177,7 @@ class _InicioLoginState extends State<InicioLogin> {
                     ),
                     OutlineButton(
                       onPressed: () {
-                        _pushPage(context, RegisterPage());
+                        _pushPage(context, RegisterPage()); //cambiar antes del push RegisterPage
                       },
                       child: Text(
                         'Registrate',
