@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:academiainnova/Paginas/contantes.dart';
-import 'package:academiainnova/Paginas/login.dart';
+import 'package:academiainnova/LoginRegister/contantes.dart';
+import 'package:academiainnova/LoginRegister/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
-import 'package:academiainnova/Paginas/login.dart';
-import 'package:academiainnova/Paginas/register.dart';
+import 'package:academiainnova/LoginRegister/login.dart';
+import 'package:academiainnova/LoginRegister/register.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

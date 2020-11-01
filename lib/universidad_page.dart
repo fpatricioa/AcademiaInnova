@@ -1,4 +1,4 @@
-import 'package:academiainnova/Paginas/inicioLogin.dart';
+import 'package:academiainnova/LoginRegister/inicioLogin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
