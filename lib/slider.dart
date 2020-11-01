@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 
 class SliderPage extends StatelessWidget {
   //declaramos las variables
@@ -17,26 +15,31 @@ class SliderPage extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: [0.1, 0.4, 0.7, 0.9],
-          colors: [
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [
+            0.1,
+            0.4,
+            0.7,
+            0.9
+          ],
+              colors: [
             Color(0xFF3594DD),
             Color(0xFF4563DB),
             Color(0xFF5036D5),
             Color(0xFF5B16D0),
-          ]
-        )
-      ),
+          ])),
       //color: Colors.blue[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          //Image.asset(image, width: width * 0.6),
-          SvgPicture.asset(image, width: width * 0.8,),
+          Image.asset(
+            image,
+            width: width * 0.9,
+          ),
           SizedBox(
-            height: 60,
+            height: 15,
           ),
           Text(
             title,
