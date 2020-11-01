@@ -1,4 +1,7 @@
+import 'package:academiainnova/LoginRegister/login.dart';
 import 'package:academiainnova/Menu_sidebar/perfil.dart';
+import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
+import 'package:academiainnova/ModuloCursos/Matem%C3%A1tica.dart';
 
 import 'LoginRegister/inicioLogin.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -14,8 +17,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  //Widget rootPage = InicioApp();
-  Widget rootPage = PerfilPage();
+  Widget rootPage =  Curso(); //cambiar a InicioApp antes de push 
+  //Widget rootPage = PerfilPage();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
