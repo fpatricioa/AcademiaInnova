@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SliderPage extends StatelessWidget {
   //declaramos las variables
@@ -35,13 +34,12 @@ class SliderPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          //Image.asset(image, width: width * 0.6),
-          SvgPicture.asset(
+          Image.asset(
             image,
-            width: width * 0.8,
+            width: width * 0.9,
           ),
           SizedBox(
-            height: 60,
+            height: 15,
           ),
           Text(
             title,
