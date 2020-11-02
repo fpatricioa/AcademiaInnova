@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 import 'package:academiainnova/LoginRegister/inicioLogin.dart';
-=======
-import 'package:academiainnova/LoginRegister/login.dart';
-import 'package:academiainnova/Menu_sidebar/perfil.dart';
-import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
-import 'package:academiainnova/ModuloCursos/Matem%C3%A1tica.dart';
-
-import 'LoginRegister/inicioLogin.dart';
->>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b
+import 'package:academiainnova/Modulo_examen/vistas/addquestion.dart';
+import 'package:academiainnova/Modulo_examen/vistas/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +14,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  Widget rootPage =  Curso(); //cambiar a InicioApp antes de push 
+  Widget rootPage = Home(); //cambiar a InicioApp antes de push
   //Widget rootPage = PerfilPage();
   @override
   Widget build(BuildContext context) {

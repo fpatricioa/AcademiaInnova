@@ -1,10 +1,5 @@
-<<<<<<< HEAD:lib/LoginRegister/inicioLogin.dart
 import 'package:academiainnova/LoginRegister/login.dart';
 import 'package:academiainnova/LoginRegister/register.dart';
-=======
-import 'login.dart';
-import 'register.dart';
->>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b:lib/Paginas/inicioLogin.dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -182,7 +177,8 @@ class _InicioLoginState extends State<InicioLogin> {
                     ),
                     OutlineButton(
                       onPressed: () {
-                        _pushPage(context, RegisterPage()); //cambiar antes del push RegisterPage
+                        _pushPage(context,
+                            RegisterPage()); //cambiar antes del push RegisterPage
                       },
                       child: Text(
                         'Registrate',

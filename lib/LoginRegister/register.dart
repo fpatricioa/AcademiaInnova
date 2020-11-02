@@ -1,13 +1,7 @@
 import 'dart:ui';
-<<<<<<< HEAD:lib/LoginRegister/register.dart
+import 'package:academiainnova/LoginRegister/Bienvenida.dart';
 import 'package:academiainnova/LoginRegister/contantes.dart';
 import 'package:academiainnova/LoginRegister/login.dart';
-=======
-import 'package:academiainnova/LoginRegister/Bienvenida.dart';
-
-import 'contantes.dart';
-import 'login.dart';
->>>>>>> 7ab9ab32f99c90127d8d91026af4abdd794ab60b:lib/Paginas/register.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
