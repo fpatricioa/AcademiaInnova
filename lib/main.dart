@@ -17,8 +17,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  Widget rootPage =  Curso(); //cambiar a InicioApp antes de push 
-  //Widget rootPage = PerfilPage();
+  //Widget rootPage =  InicioLogin();
+  Widget rootPage = PerfilPage();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
