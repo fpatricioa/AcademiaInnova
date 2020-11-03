@@ -1,12 +1,12 @@
 import 'dart:ui';
 import 'package:academiainnova/LoginRegister/Bienvenida.dart';
-import 'package:academiainnova/Menu_sidebar/dashboard.dart';
-import 'package:academiainnova/Menu_sidebar/drawerScreen.dart';
-import 'contantes.dart';
-import 'register.dart';
+import 'package:academiainnova/LoginRegister/contantes.dart';
+import 'package:academiainnova/LoginRegister/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../Menu_sidebar/dashboard.dart';
+import '../Menu_sidebar/drawerScreen.dart';
 
 class LoginPage extends StatefulWidget {
   @override

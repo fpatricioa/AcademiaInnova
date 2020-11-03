@@ -1,9 +1,8 @@
+import 'package:academiainnova/LoginRegister/inicioLogin.dart';
+import 'package:academiainnova/LoginRegister/login.dart';
+import 'package:academiainnova/LoginRegister/register.dart';
 import 'package:academiainnova/Menu_sidebar/dashboard.dart';
 import 'package:academiainnova/Menu_sidebar/drawerScreen.dart';
-
-import 'LoginRegister/inicioLogin.dart';
-import 'LoginRegister/login.dart';
-import 'LoginRegister/register.dart';
 import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> buildAppRoutes() {
