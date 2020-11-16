@@ -22,18 +22,17 @@ class _InicioLoginState extends State<InicioLogin> {
                 Color(0xFF5B16D0),
                 Color(0xFFF5326F),
                 Color(0xFFFF7B43),
-                //Color(0xFF3594DD),
-                //Color(0xFF5036D5),
               ]),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 40.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 FontAwesomeIcons.graduationCap,
                 color: Colors.red,
-                size: 70.0,
+                size: 75.0,
               ),
               SizedBox(
                 height: 20.0,
@@ -60,7 +59,7 @@ class _InicioLoginState extends State<InicioLogin> {
                 height: 10.0,
               ),
               Text(
-                'Un lugar donde encontraras lo necesario',
+                'Un lugar donde enseñar es nuestra especialidad',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -68,7 +67,7 @@ class _InicioLoginState extends State<InicioLogin> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 70.0,
+                height: 35.0,
               ),
               Container(
                 padding: EdgeInsets.symmetric(
@@ -76,7 +75,7 @@ class _InicioLoginState extends State<InicioLogin> {
                   horizontal: 20.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0xff3949AB),
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 child: Row(
@@ -84,13 +83,13 @@ class _InicioLoginState extends State<InicioLogin> {
                   children: <Widget>[
                     Icon(
                       FontAwesomeIcons.facebookF,
-                      color: Colors.blue,
+                      color: Colors.white,
                       size: 25.0,
                     ),
                     Text(
                       ' | Regístrate con facebook',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
                       ),
@@ -107,7 +106,7 @@ class _InicioLoginState extends State<InicioLogin> {
                   horizontal: 20.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0Xff536DFE),
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 child: Row(
@@ -115,13 +114,13 @@ class _InicioLoginState extends State<InicioLogin> {
                   children: <Widget>[
                     Icon(
                       FontAwesomeIcons.google,
-                      color: Colors.blue,
+                      color: Colors.white,
                       size: 25.0,
                     ),
                     Text(
                       ' | Regístrate con Google',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
                       ),
@@ -135,37 +134,34 @@ class _InicioLoginState extends State<InicioLogin> {
               Container(
                 padding: EdgeInsets.symmetric(
                   vertical: 4.0,
-                  horizontal: 20.0,
                 ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: FlatButton(
+                width: double.infinity,
+                child: RaisedButton(
+                  elevation: 5.0,
                   onPressed: () {
                     _pushPage(context, LoginPage());
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Iniciar sesión',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ],
+                  padding: EdgeInsets.all(15.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  color: Colors.white,
+                  child: Text(
+                    'Iniciar sesion',
+                    style: TextStyle(
+                        color: Color(0xFF527DAA),
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'OpenSans'),
                   ),
                 ),
               ),
               SizedBox(
-                height:
-                    20.0, //esta linea de codigo es hacer espacio entre widget o botones
-              ),
+                  height:
+                      20.0), //esta linea de codigo es hacer espacio entre widget o botones
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '¿No tienes una cuenta? ',
@@ -175,7 +171,7 @@ class _InicioLoginState extends State<InicioLogin> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    OutlineButton(
+                    FlatButton(
                       onPressed: () {
                         _pushPage(context,
                             RegisterPage()); //cambiar antes del push RegisterPage
@@ -186,7 +182,6 @@ class _InicioLoginState extends State<InicioLogin> {
                           color: Colors.white,
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
                         ),
                       ),
                     ),

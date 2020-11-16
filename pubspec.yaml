@@ -39,10 +39,21 @@ dependencies:
   flutter_screenutil: ^3.2.0
   animated_theme_switcher: ^1.0.7
   hidden_drawer_menu: ^2.0.1
+  http: ^0.12.2
+  
+  #dependencias examen_uno
+  auto_size_text: ^2.1.0
+  flutter_swiper: ^1.1.6
+
+  #DEPENDENCIAS PARA VIDEO
+  youtube_player_flutter: ^7.0.0+7
+
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -73,6 +84,8 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    
+          
     - family: SFProText
       fonts:
         - asset: assets/fonts/SF-Pro-Text-Thin.otf
