@@ -22,7 +22,7 @@ class Item extends StatelessWidget {
           Container(
             child: Icon(
               icon,
-              size: 40,
+              size: 50,
               color: Colors.white,
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -30,7 +30,7 @@ class Item extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
+                fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
           )
         ],
       ),

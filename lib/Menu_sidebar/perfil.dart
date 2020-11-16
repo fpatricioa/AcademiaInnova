@@ -1,162 +1,90 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'constants.dart';
+import '../Menu_sidebar/widgets/profile_list_item.dart';
 
-class PerfilPage extends StatelessWidget {
-  FirebaseAuth _auth = FirebaseAuth.instance;
+class ProfilePage extends StatefulWidget {
+  final String title;
+  final User user;
+  ProfilePage({Key key, this.title, this.user}) : super(key: key);
 
   @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  @override
   Widget build(BuildContext context) {
-    var tags;
     return Scaffold(
-      backgroundColor: Color(0xff09031d),
-      appBar: AppBar(title: Text('Perfil')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      backgroundColor: kAppPrimaryColor,
+      body: Stack(
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 7),
-                child: CircleAvatar(
-                  radius: 35,
-                  backgroundImage: AssetImage('assets/image/usuario.png'),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 30.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Fray Anaya',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
-                          color: Colors.white),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.location_on,
-                            color: Colors.white,
-                            size: 17,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
-                              'Cursos 100% practicos',
-                              style: TextStyle(
-                                color: Colors.white,
-                                wordSpacing: 2,
-                                letterSpacing: 4,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
+          Container(
+            height: 402,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(25),
+                  bottomLeft: Radius.circular(25)),
+              color: Colors.blue,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              right: 38.0,
-              left: 38,
-              top: 15,
-              bottom: 12,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: EdgeInsets.all(25),
+            child: Column(
               children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      '17k',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                    Text(
-                      'Seguidores',
-                      style: TextStyle(
-                        color: Colors.white,
+                Padding(
+                  padding: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AppBarButton(
+                        icon: Icons.arrow_back,
                       ),
-                    ),
-                  ],
-                ),
-                Container(
-                  color: Colors.white,
-                  width: 0.2,
-                  height: 22,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      '387',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                    Text(
-                      'Seguidores',
-                      style: TextStyle(
-                        color: Colors.white,
+                      Text(
+                        'Perfil de usuario',
+                        style: TextStyle(color: kAppPrimaryColor, fontSize: 20),
                       ),
-                    ),
-                  ],
-                ),
-                Container(
-                  color: Colors.white,
-                  width: 0.2,
-                  height: 22,
-                ),
-                Container(
-                  padding:
-                      EdgeInsets.only(left: 18, right: 18, top: 8, bottom: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(33)),
-                    gradient: LinearGradient(
-                      colors: [Color(0xff6D0EB5), Color(0xff4059F1)],
-                      begin: Alignment.bottomRight,
-                      end: Alignment.centerLeft,
-                    ),
+                      Icon(
+                        Icons.notifications,
+                        size: 35,
+                        color: Colors.grey.shade200,
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    'Seguir',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                )
+                ),
+                AvatarImage(),
+                SizedBox(
+                  height: 25,
+                ),
+                SocialIcons(),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  //widget.user.displayName,
+                  'Carlos cruzado',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "Poppins"),
+                ),
+                Text(
+                  '@',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey.shade200,
+                      fontSize: 17),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Estudiante del quinto grado',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20, fontFamily: "Poppins"),
+                ),
+                SizedBox(height: 15),
+                ProfileListItems(),
               ],
-            ),
-          ),
-          //tags seccion
-          Container(
-            height: 44,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: tags.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  margin: EdgeInsets.only(right: 13),
-                  child: Text(
-                      tags([index], style: TextStyle(color: Colors.white))),
-                );
-              },
             ),
           )
         ],
@@ -165,4 +93,153 @@ class PerfilPage extends StatelessWidget {
   }
 }
 
-//buenas tardes, tendrá en talla S y colores por favor
+class AppBarButton extends StatelessWidget {
+  final IconData icon;
+  const AppBarButton({this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: kAppPrimaryColor,
+          boxShadow: [
+            BoxShadow(
+              color: kLightBlack,
+              offset: Offset(1, 1),
+              blurRadius: 10,
+            ),
+            BoxShadow(
+              color: kWhite,
+              offset: Offset(-1, -1),
+              blurRadius: 10,
+            ),
+          ]),
+      child: Icon(
+        icon,
+        color: fCL,
+      ),
+    );
+  }
+}
+
+class AvatarImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 120,
+      height: 120,
+      padding: EdgeInsets.all(2),
+      child: Container(
+        decoration: avatarDecoration,
+        padding: EdgeInsets.all(3),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: AssetImage('assets/image/usuario.png'),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SocialIcons extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        SocialIcon(
+          color: Color(0xFF102397),
+          iconData: facebook,
+          onPressed: () {},
+        ),
+        SocialIcon(
+          color: Color(0xFFff4f38),
+          iconData: googlePlus,
+          onPressed: () {},
+        ),
+        SocialIcon(
+          color: Color(0xFF38A1F3),
+          iconData: twitter,
+          onPressed: () {},
+        ),
+        SocialIcon(
+          color: Color(0xFF2867B2),
+          iconData: linkedin,
+          onPressed: () {},
+        )
+      ],
+    );
+  }
+}
+
+class SocialIcon extends StatelessWidget {
+  final Color color;
+  final IconData iconData;
+  final Function onPressed;
+
+  SocialIcon({this.color, this.iconData, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return new Padding(
+      padding: EdgeInsets.only(left: 20.0),
+      child: Container(
+        width: 45.0,
+        height: 45.0,
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+        child: RawMaterialButton(
+          shape: CircleBorder(),
+          onPressed: () {
+            print('object');
+          },
+          child: Icon(iconData, color: Colors.white),
+        ),
+      ),
+    );
+  }
+}
+
+@override
+class ProfileListItems extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView(
+        children: <Widget>[
+          ProfileListItem(
+            icon: LineAwesomeIcons.user_shield,
+            text: 'Privacidad',
+          ),
+          ProfileListItem(
+            icon: LineAwesomeIcons.history,
+            text: 'Historial de compras',
+          ),
+          ProfileListItem(
+            icon: LineAwesomeIcons.question_circle,
+            text: 'Ayuda & Soporte',
+          ),
+          ProfileListItem(
+            icon: LineAwesomeIcons.cog,
+            text: 'Configuración',
+          ),
+          ProfileListItem(
+            icon: LineAwesomeIcons.user_plus,
+            text: 'Invitar amigos',
+          ),
+          ProfileListItem(
+            icon: LineAwesomeIcons.alternate_sign_out,
+            text: 'Cerrar sesión',
+            hasNavigation: false,
+          ),
+        ],
+      ),
+    );
+  }
+}

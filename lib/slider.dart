@@ -4,15 +4,13 @@ class SliderPage extends StatelessWidget {
   //declaramos las variables
   final String title;
   final String descripcion;
-  final String image;
+  final dynamic icon;
 
   //una ves creado inicalizamos con un constructor
-  SliderPage({this.title, this.descripcion, this.image});
+  SliderPage({this.title, this.descripcion, this.icon});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -33,13 +31,15 @@ class SliderPage extends StatelessWidget {
       //color: Colors.blue[200],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            image,
-            width: width * 0.9,
+          Icon(
+            icon,
+            color: Color(0xfff50057),
+            size: 150,
           ),
           SizedBox(
-            height: 15,
+            height: 25,
           ),
           Text(
             title,
@@ -50,7 +50,7 @@ class SliderPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 80),
@@ -59,7 +59,7 @@ class SliderPage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 height: 1.5,
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.normal,
                 letterSpacing: 0.7,
               ),

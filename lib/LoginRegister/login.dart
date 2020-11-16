@@ -1,12 +1,12 @@
 import 'dart:ui';
 import 'package:academiainnova/LoginRegister/Bienvenida.dart';
-import 'package:academiainnova/Menu_sidebar/dashboard.dart';
-import 'package:academiainnova/Menu_sidebar/drawerScreen.dart';
-import 'contantes.dart';
-import 'register.dart';
+import 'package:academiainnova/LoginRegister/contantes.dart';
+import 'package:academiainnova/LoginRegister/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../Menu_sidebar/dashboard.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _passwordController = TextEditingController();
-  final items = <Widget>[DashboardPage(), DrawerScreen()];
+  final items = <Widget>[DashboardPage()];//aqui se puede aumentar UnaPageMasParaCargarAlMismoTiempo()
 
   Widget _cargarEmail() {
     return Column(
@@ -209,16 +209,24 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
                 child: Column(
                   children: <Widget>[
+                    Icon(
+                      FontAwesomeIcons.graduationCap,
+                      color: Colors.red,
+                      size: 100.0,
+                    ),
+                    SizedBox(
+                      height: 15.0, //espacio
+                    ),
                     Text(
                       'INICIAR SESIÓN',
                       style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
-                          fontSize: 30.0,
+                          fontSize: 25.0,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 30.0, //espacio
+                      height: 10.0, //espacio
                     ),
                     _cargarEmail(),
                     _cargarContrasena(),

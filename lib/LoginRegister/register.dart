@@ -1,11 +1,11 @@
 import 'dart:ui';
 import 'package:academiainnova/LoginRegister/Bienvenida.dart';
-
-import 'contantes.dart';
-import 'login.dart';
+import 'package:academiainnova/LoginRegister/contantes.dart';
+import 'package:academiainnova/LoginRegister/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -257,16 +257,24 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    Icon(
+                      FontAwesomeIcons.graduationCap,
+                      color: Colors.red,
+                      size: 100.0,
+                    ),
+                    SizedBox(
+                      height: 15.0, //espacio
+                    ),
                     Text(
                       'REGISTRO',
                       style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
-                          fontSize: 30.0,
+                          fontSize: 25.0,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 30.0, //espacio
+                      height: 10.0, //espacio
                     ),
                     _cargarNombres(),
                     _cargarEmail(),
