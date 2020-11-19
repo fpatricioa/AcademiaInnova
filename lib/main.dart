@@ -1,3 +1,4 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'LoginRegister/inicioLogin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,17 +12,16 @@ Future<void> main() async {
 }
 
 @override
-// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  Widget rootPage = InicioApp();
-  //Widget rootPage = MyApplica();
+  Widget rootPage = InicioApp();//cambiar a InicioApp
+  //Widget rootPage = ProfilePage();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner:
           false, //esto es para ocultar la cinta de debug
       title: 'ACADEMIA',
-      home: rootPage, //esta clase lo creamos bajo
+      home: rootPage,
     );
   }
 }

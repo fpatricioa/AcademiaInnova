@@ -14,19 +14,39 @@ class _UniversidadState extends State<Universidad> {
     return Scaffold(
       appBar: new AppBar(
         title: Text("Selecciona universidad"),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF5B16D0),
+        elevation: 0.0,
       ),
-      backgroundColor: Colors.blue[500],
+      
       body: Container(
-        padding: EdgeInsets.all(5.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  //Color(0xFFFF7B43),
+                  //Color(0xFFF5326F),
+                  Color(0xFF5B16D0),
+                  Color(0xFF5036D5),
+                  Color(0xFF4563DB),
+                  Color(0xFF3594DD),
+                  
+                ],
+                //stops: [0.1, 0.4]
+              ),
+          
+          ),
+        padding: EdgeInsets.all(16.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(35.0),
+              
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFFA9C31),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -38,12 +58,18 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.school_outlined,
-                        color: Colors.yellow,
+                        Icons.home_work_rounded,
+                        color: Colors.white,
                         size: 70.0,
                       ),
-                      Text("Universidad-Cesar-Vallejo",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("UCV",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                          
                     ],
                   ),
                 ),
@@ -51,9 +77,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFE62E4D),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -65,12 +92,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.library_books,
-                        color: Colors.red,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-Federico-Villareal",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("UNFV",
+                          style: TextStyle(
+                      color: Colors.grey.shade200,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),
@@ -78,9 +110,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFE62E4D),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -92,12 +125,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.format_shapes,
-                        color: Colors.orange,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-De-Ingenieria",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("UNI",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),
@@ -105,9 +143,11 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFFA9C31),
+              margin: EdgeInsets.all(15.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -119,12 +159,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.receipt_long,
-                        color: Colors.black54,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-Peruana-Ciencias",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("UPC",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),
@@ -132,9 +177,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFFA9C31),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -146,12 +192,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.public,
-                        color: Colors.brown,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-Pontificia-Catolica",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("PUCP",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),
@@ -159,9 +210,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFE62E4D),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -173,12 +225,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.history_edu,
-                        color: Colors.blue,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-San-Ignacio-Loyola",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("USIL",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),
@@ -186,9 +243,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFE62E4D),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -200,12 +258,18 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.scatter_plot,
-                        color: Colors.purple,
+
+                        Icons.home_work_rounded,
+                        color: Colors.white,
                         size: 70.0,
                       ),
-                      Text("Universidad-Mayor-San-Marcos",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("UMNSM",
+                          style: TextStyle(
+                      color: Colors.grey.shade200,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),   style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
@@ -213,9 +277,10 @@ class _UniversidadState extends State<Universidad> {
             ),
             Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(35.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFFA9C31),
+              margin: EdgeInsets.all(15.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -227,12 +292,17 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
-                        Icons.science_outlined,
-                        color: Colors.green,
+                        Icons.home_work_rounded,
+                        color: Colors.grey.shade200,
                         size: 70.0,
                       ),
-                      Text("Universidad-San-Martin-De-Porres",
-                          style: new TextStyle(fontSize: 15.0))
+                      Text("USMP",
+                          style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                     ],
                   ),
                 ),

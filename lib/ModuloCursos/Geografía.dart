@@ -17,9 +17,9 @@ class _GeogState extends State<Geog> {
     return Scaffold(
       appBar:new AppBar(
         title: Text("Geografía"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFF7E5E23),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xFFA8843F),
       body: Container(
         padding: EdgeInsets.all(80.0),
         
@@ -59,7 +59,7 @@ class _GeogState extends State<Geog> {
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.assignment,color: Colors.orange, size: 70.0,),
+                      Icon(Icons.assignment,color: Colors.brown, size: 70.0,),
                       Text("PRÁCTICAS", style :new TextStyle(fontSize: 15.0))
                     ],
                   ),

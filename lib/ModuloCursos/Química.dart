@@ -19,9 +19,9 @@ class _QuimState extends State<Quim> {
     return Scaffold(
       appBar: new AppBar(
         title: Text("Química"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFF1F8112),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xFF38D323),
       body: Container(
         padding: EdgeInsets.all(80.0),
         child: GridView.count(
@@ -70,7 +70,7 @@ class _QuimState extends State<Quim> {
                     children: <Widget>[
                       Icon(
                         Icons.assignment,
-                        color: Colors.orange,
+                        color: Colors.green,
                         size: 70.0,
                       ),
                       Text("PRÁCTICAS", style: new TextStyle(fontSize: 15.0))

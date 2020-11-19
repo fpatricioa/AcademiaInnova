@@ -30,24 +30,26 @@ class _CursoState extends State<Curso> {
         title: Text('Selecciona el curso'),
         leading: Container(),
         centerTitle: true,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xFF0E6268),
         elevation: 0.0,
       ),
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/image/fondoonb1.jpg'),
-          fit: BoxFit.cover
-        )),
+          image: DecorationImage(
+            image: AssetImage('assets/image/ejemploo4.jpg'), fit: BoxFit.cover)
+          ),
         padding: EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 10),
         child: GridView.count(
           crossAxisCount: 3,
           children: <Widget>[
             Card(
+              
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+
+              color: Color(0xffFED525),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -59,7 +61,9 @@ class _CursoState extends State<Curso> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       //Icon(Icons.psychology_outlined, size: 70.0),
-                      Item(
+
+                      Item2(
+
                           icon: Icons.psychology_outlined,
                           title: "MATEMÁTICA",
                           color: 0xffFED525)
@@ -73,7 +77,10 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+
+              color: Color(0xffFD637B),
+              margin: EdgeInsets.all(18.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -84,7 +91,7 @@ class _CursoState extends State<Curso> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
+                      Item2(
                           icon: Icons.library_books,
                           title: "LITERATURA",
                           color: 0xffFD637B)
@@ -97,7 +104,8 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              color: Color(0xFFFF7221),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -108,10 +116,10 @@ class _CursoState extends State<Curso> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
-                          icon: Icons.format_shapes,
+                      Item2(
+                          icon: Icons.share_outlined,
                           title: "GEOMETRÍA",
-                          color: 0xff21CDFF)
+                          color: 0xFFFF7221)
                     ],
                   ),
                 ),
@@ -121,7 +129,8 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              color: Color(0xFF21CDF0),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -132,10 +141,10 @@ class _CursoState extends State<Curso> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
-                          icon: Icons.receipt_long,
+                      Item2(
+                          icon: Icons.format_shapes,
                           title: "ARITMÉTICA",
-                          color: 0xff7585F6)
+                          color: 0xFF21CDF0)
                     ],
                   ),
                 ),
@@ -145,23 +154,24 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(4.0),
+
+              color: Color(0xFFA8843F),
+              margin: EdgeInsets.all(18.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Geog()));
                 },
-                splashColor: Colors.orange,
+                //splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(
-                        Icons.public,
-                        color: Colors.brown,
-                        size: 70.0,
-                      ),
-                      Text("GEOGRAFÍA", style: new TextStyle(fontSize: 15.0))
+                      Item2(
+                          icon: Icons.public_outlined,
+                          title: "GEOGRAFÍA",
+                          color: 0xFFA8843F)
                     ],
                   ),
                 ),
@@ -171,23 +181,23 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFF2E31D4),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Hist()));
                 },
-                splashColor: Colors.orange,
+                //splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(
-                        Icons.history_edu,
-                        color: Colors.blue,
-                        size: 70.0,
-                      ),
-                      Text("HISTORIA", style: new TextStyle(fontSize: 15.0))
+
+                      Item2(
+                          icon: Icons.history_edu,
+                          title: "HISTORIA",
+                          color: 0xFF2E31D4)
                     ],
                   ),
                 ),
@@ -197,23 +207,22 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFFA626C0),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Fis()));
                 },
-                splashColor: Colors.orange,
+                //splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(
-                        Icons.scatter_plot,
-                        color: Colors.purple,
-                        size: 70.0,
-                      ),
-                      Text("FÍSICA", style: new TextStyle(fontSize: 15.0))
+                      Item2(
+                          icon: Icons.scatter_plot_outlined,
+                          title: "FÍSICA",
+                          color: 0xFFA626C0)
                     ],
                   ),
                 ),
@@ -223,23 +232,23 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(4.0),
+              color: Color(0xFF38D323),
+              margin: EdgeInsets.all(18.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Quim()));
                 },
-                splashColor: Colors.orange,
+                //splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(
-                        Icons.science_outlined,
-                        color: Colors.green,
-                        size: 70.0,
-                      ),
-                      Text("QUÍMICA", style: new TextStyle(fontSize: 15.0))
+                      Item2(
+                          icon: Icons.science_outlined,
+                          title: "QUÍMICA",
+                          color: 0xFF38D323)
+
                     ],
                   ),
                 ),

@@ -1,4 +1,6 @@
+import 'package:academiainnova/Examen_uno/principal.dart';
 import 'package:flutter/material.dart';
+import 'package:academiainnova/videos/main_video.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
@@ -17,9 +19,9 @@ class _MatState extends State<Mat> {
     return Scaffold(
       appBar:new AppBar(
         title: Text("Matemática"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFFB49405),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xffFED525),
       body: Container(
         padding: EdgeInsets.all(80.0),
         
@@ -32,13 +34,16 @@ class _MatState extends State<Mat> {
             ),
               margin: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: (){},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MainPrincipal()));
+                },
                 splashColor: Colors.orange,
                 child: Center(
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.book,color: Colors.yellow, size: 70.0,),
+                      Icon(Icons.book,color: Color(0xFFECD81C), size: 88.0,),
                       Text("CLASES", style :new TextStyle(fontSize: 15.0))
                       
                     ],
@@ -53,13 +58,16 @@ class _MatState extends State<Mat> {
               ),
               margin: EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: (){},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyApplicativo()));
+                },
                 splashColor: Colors.orange,
                 child: Center(
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.assignment,color: Colors.orange, size: 70.0,),
+                      Icon(Icons.assignment,color: Color(0xFFECD81C), size: 88.0,),
                       Text("PRÁCTICAS", style :new TextStyle(fontSize: 15.0))
                     ],
                   ),
