@@ -20,7 +20,9 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _passwordController = TextEditingController();
-  final items = <Widget>[DashboardPage()];//aqui se puede aumentar UnaPageMasParaCargarAlMismoTiempo()
+  final items = <Widget>[
+    DashboardPage()
+  ]; //aqui se puede aumentar UnaPageMasParaCargarAlMismoTiempo()
 
   Widget _cargarEmail() {
     return Column(
@@ -107,13 +109,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: FlatButton(
-        onPressed: () =>
-            print('El botón de la contraseña olvidada fue presionado'),
-        padding: EdgeInsets.only(right: 0.0),
-        child: Text(
-          'Olvidé la contraseña',
-          style: kLabelStyle,
-        ),
+        
       ),
     );
   }
@@ -209,10 +205,9 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
                 child: Column(
                   children: <Widget>[
-                    Icon(
-                      FontAwesomeIcons.graduationCap,
-                      color: Colors.red,
-                      size: 100.0,
+                    Image.asset(
+                      'assets/image/Login.png',
+                      width: 160,
                     ),
                     SizedBox(
                       height: 15.0, //espacio
@@ -220,7 +215,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       'INICIAR SESIÓN',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.grey.shade300,
                           fontFamily: 'OpenSans',
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold),
