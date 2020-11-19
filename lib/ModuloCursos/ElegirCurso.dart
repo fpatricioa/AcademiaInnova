@@ -40,7 +40,7 @@ class _CursoState extends State<Curso> {
           ),
         padding: EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 10),
         child: GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: <Widget>[
             Card(
               
