@@ -1,4 +1,3 @@
-import 'package:academiainnova/Menu_sidebar/item_dashboard.dart';
 import 'package:academiainnova/ModuloCursos/Aritm%C3%A9tica.dart';
 import 'package:academiainnova/ModuloCursos/F%C3%ADsica.dart';
 import 'package:academiainnova/ModuloCursos/Geograf%C3%ADa.dart';
@@ -11,83 +10,76 @@ import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
-    home: Curso(),
+    home: VILLA(),
   ));
 }
 
-class Curso extends StatefulWidget {
+class VILLA extends StatefulWidget {
   @override
-  _CursoState createState() => _CursoState();
+  _VILLAState createState() => _VILLAState();
 }
 
-class _CursoState extends State<Curso> {
+class _VILLAState extends State<VILLA> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.orange[300],
-      backgroundColor: Colors.deepPurple,
-      appBar: AppBar(
-        title: Text('Selecciona el curso'),
-        leading: Container(),
-        centerTitle: true,
-        backgroundColor: Colors.deepPurple,
-        elevation: 0.0,
+      appBar: new AppBar(
+        title: Text("Seleccion area Villareal"),
+        backgroundColor: Colors.orange,
       ),
+      backgroundColor: Colors.orange[300],
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('assets/image/fondoonb1.jpg'),
-          fit: BoxFit.cover
-        )),
-        padding: EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 10),
+        padding: EdgeInsets.all(55.0),
         child: GridView.count(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: <Widget>[
             Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              margin: EdgeInsets.all(4.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Mat()));
                 },
-                //splashColor: Colors.orange,
+                splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      //Icon(Icons.psychology_outlined, size: 70.0),
-                      Item(
-                          icon: Icons.psychology_outlined,
-                          title: "MATEMÁTICA",
-                          color: 0xffFED525)
+                      Icon(
+                        Icons.psychology_outlined,
+                        color: Colors.yellow,
+                        size: 70.0,
+                      ),
+                      Text("MATEMÁTICA", style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
               ),
             ),
             Card(
-              //color: Color(0xffFD637B),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              margin: EdgeInsets.all(4.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Lit()));
                 },
-                //splashColor: Colors.orange,
+                splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
-                          icon: Icons.library_books,
-                          title: "LITERATURA",
-                          color: 0xffFD637B)
+                      Icon(
+                        Icons.library_books,
+                        color: Colors.red,
+                        size: 70.0,
+                      ),
+                      Text("LITERATURA", style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
@@ -97,21 +89,23 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              margin: EdgeInsets.all(4.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Geo()));
                 },
-                //splashColor: Colors.orange,
+                splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
-                          icon: Icons.format_shapes,
-                          title: "GEOMETRÍA",
-                          color: 0xff21CDFF)
+                      Icon(
+                        Icons.format_shapes,
+                        color: Colors.orange,
+                        size: 70.0,
+                      ),
+                      Text("GEOMETRÍA", style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
@@ -121,21 +115,23 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              margin: EdgeInsets.all(3.0),
+              margin: EdgeInsets.all(4.0),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Arit()));
                 },
-                //splashColor: Colors.orange,
+                splashColor: Colors.orange,
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Item(
-                          icon: Icons.receipt_long,
-                          title: "ARITMÉTICA",
-                          color: 0xff7585F6)
+                      Icon(
+                        Icons.receipt_long,
+                        color: Colors.black54,
+                        size: 70.0,
+                      ),
+                      Text("ARITMÉTICA", style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
