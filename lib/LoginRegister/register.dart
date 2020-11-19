@@ -154,8 +154,9 @@ class _RegisterPageState extends State<RegisterPage> {
     return Container(
       alignment: Alignment.centerRight,
       child: FlatButton(
-        onPressed: () =>
-            print('El botón de la contraseña olvidada fue presionado'),
+        onPressed: () {
+          print('cargar olvido boton');
+        },
         padding: EdgeInsets.only(right: 0.0),
         child: Text(
           'Olvidé la contraseña',
@@ -257,24 +258,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Icon(
-                      FontAwesomeIcons.graduationCap,
-                      color: Colors.red,
-                      size: 100.0,
-                    ),
-                    SizedBox(
-                      height: 15.0, //espacio
+                    Image.asset(
+                      'assets/image/Login.png',
+                      width: 160,
                     ),
                     Text(
                       'REGISTRO',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.grey.shade300,
                           fontFamily: 'OpenSans',
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 10.0, //espacio
                     ),
                     _cargarNombres(),
                     _cargarEmail(),

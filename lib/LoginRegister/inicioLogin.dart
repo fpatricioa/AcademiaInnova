@@ -14,28 +14,32 @@ class _InicioLoginState extends State<InicioLogin> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF4563DB),
-                Color(0xFF5B16D0),
-                Color(0xFFF5326F),
-                Color(0xFFFF7B43),
-              ]),
-        ),
+            /*gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF4563DB),
+              Color(0xFF5B16D0),
+              Color(0xFFF5326F),
+              Color(0xFFFF7B43),
+            ]),*/
+            image: DecorationImage(
+          image: AssetImage('assets/image/backgroundUI.png'),
+          fit: BoxFit.cover,
+        )),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 28.0, vertical: 40.0),
+          padding: const EdgeInsets.only(
+              left: 28.0, right: 28, top: 80.0, bottom: 0.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                FontAwesomeIcons.graduationCap,
-                color: Colors.red,
-                size: 75.0,
+              Image.asset(
+                'assets/image/Login.png',
+                width: 150,
+                color: Colors.grey.shade200,
               ),
               SizedBox(
-                height: 20.0,
+                height: 5.0,
               ),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -45,14 +49,14 @@ class _InicioLoginState extends State<InicioLogin> {
                       style: TextStyle(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 26),
                     ),
                     Text(
                       ' INNOVA',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 26),
                     ),
                   ]),
               SizedBox(
@@ -156,18 +160,16 @@ class _InicioLoginState extends State<InicioLogin> {
                   ),
                 ),
               ),
-              SizedBox(
-                  height:
-                      20.0), //esta linea de codigo es hacer espacio entre widget o botones
               Container(
+                margin: EdgeInsets.only(top: 100.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '¿No tienes una cuenta? ',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
+                        color: Colors.red,
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -179,8 +181,8 @@ class _InicioLoginState extends State<InicioLogin> {
                       child: Text(
                         'Registrate',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
+                          color: Colors.red,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
