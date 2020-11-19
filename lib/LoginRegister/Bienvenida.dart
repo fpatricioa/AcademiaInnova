@@ -1,5 +1,6 @@
 import 'package:academiainnova/Examen_uno/principal.dart';
 import 'package:academiainnova/Menu_sidebar/dashboard.dart';
+import 'package:academiainnova/Modulo_Universidad/ElegirUniversidad.dart';
 import '../Menu_sidebar/perfil.dart';
 import 'package:academiainnova/ModuloCursos/ElegirCarrera.dart';
 import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
@@ -36,7 +37,7 @@ class _BienvenidaPageState extends State<BienvenidaPage> {
           baseStyle: TextStyle(color: Colors.white, fontSize: 20.0),
           colorLineSelected: Colors.orange,
         ),
-        ProfilePage()));
+        Universidad()));
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
