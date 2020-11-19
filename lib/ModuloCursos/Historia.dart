@@ -17,9 +17,9 @@ class _HistState extends State<Hist> {
     return Scaffold(
       appBar:new AppBar(
         title: Text("Historia"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFF161880),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xFF2E31D4),
       body: Container(
         padding: EdgeInsets.all(80.0),
         
@@ -38,7 +38,7 @@ class _HistState extends State<Hist> {
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.book,color: Colors.blue, size: 70.0,),
+                      Icon(Icons.book,color: Color(0xFF2023C9), size: 70.0,),
                       Text("CLASES", style :new TextStyle(fontSize: 15.0))
                       
                     ],
@@ -59,7 +59,7 @@ class _HistState extends State<Hist> {
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.assignment,color: Colors.orange, size: 70.0,),
+                      Icon(Icons.assignment,color: Color(0xFF2023C9), size: 70.0,),
                       Text("PRÁCTICAS", style :new TextStyle(fontSize: 15.0))
                     ],
                   ),

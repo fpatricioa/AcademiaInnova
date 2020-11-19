@@ -10,6 +10,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff00BCD4),
       body: Container(
         padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
         child: Column(
@@ -20,7 +21,7 @@ class _DashboardPageState extends State<DashboardPage> {
               style: TextStyle(
                   fontSize: 23.0,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff7585F6)),
+                  color: Colors.grey.shade200),
             ),
             SizedBox(
               height: 20.0,
@@ -35,7 +36,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   child: Text(
                     '28%',
                     style: TextStyle(
-                      color: Colors.blueAccent[200],
+                      color: Colors.grey.shade100,
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -43,7 +44,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100.0),
                     border: Border.all(
-                        color: Color(0xFF7E89FC),
+                        color: Color(0xFFEC407A),
                         style: BorderStyle.solid,
                         width: 15),
                   ),
@@ -57,22 +58,12 @@ class _DashboardPageState extends State<DashboardPage> {
               spacing: 17,
               runSpacing: 17,
               children: <Widget>[
-                Item(title: 'Test', icon: Icons.home, color: 0xffFED525),
-                Item(title: 'coleccion', icon: Icons.star, color: 0xffFD6378),
-                Item(
-                    title: 'Precio',
-                    icon: Icons.monetization_on,
-                    color: 0xff21CDFF),
-                Item(
-                    title: 'ventas', icon: Icons.show_chart, color: 0xff7585F6),
-                Item(
-                    title: 'cursos',
-                    icon: Icons.monetization_on_rounded,
-                    color: 0xffFED525),
-                Item(
-                    title: 'Examenes',
-                    icon: Icons.show_chart_sharp,
-                    color: 0xffFD6378),
+                Item(title: 'Home', icon: Icons.home, color: 0xff7585F6 ),
+                Item(title: 'Universidades', icon: Icons.account_balance, color: 0xffFD6378),
+                Item(title: 'Cursos', icon: Icons.book, color: 0xff21CDFF),
+                Item(title: 'Examenes', icon: Icons.content_copy, color: 0xffFED525),
+                Item(title: 'Mi Progreso',icon: Icons.timeline, color: 0xff00C853),
+                Item(title: 'Perfil',icon: Icons.supervised_user_circle,color: 0xffAA00FF),
               ],
             ),
           ],

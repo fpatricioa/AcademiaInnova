@@ -1,8 +1,9 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'LoginRegister/inicioLogin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'routes.dart';
 import 'slider.dart';
 
 Future<void> main() async {
@@ -11,8 +12,10 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
+@override
 class MyApp extends StatelessWidget {
-  Widget rootPage =  InicioApp(); //cambiar a InicioApp antes de push 
+  Widget rootPage = InicioApp();//cambiar a InicioApp
+  //Widget rootPage = ProfilePage();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +23,6 @@ class MyApp extends StatelessWidget {
           false, //esto es para ocultar la cinta de debug
       title: 'ACADEMIA',
       home: rootPage, //esta clase lo creamos bajo
-      routes: buildAppRoutes(),
     );
   }
 }
@@ -38,28 +40,27 @@ class _InicioAppState extends State<InicioApp> {
 
   List<Widget> _pages = [
     SliderPage(
-      //este SliderPage viene de slider.dart ahi esta declarado
-      title: "SOLO EL LOGO",
-      descripcion: "",
-      image: "assets/image/cat.png",
+      icon: FontAwesomeIcons.bookReader,
+      title: "ACADEMIA",
+      descripcion: "INNOVA",
     ),
     SliderPage(
-      //este SliderPage viene de slider.dart ahi esta declarado
-      title: "Academia Innova",
-      descripcion: "El mundo es la plataforma mas llamativa y apreciada",
-      image: "assets/image/laptop.png",
-    ),
-    SliderPage(
-      title: 'Academia innova',
+      icon: FontAwesomeIcons.mendeley,
+      title: "Estudia a tu ritmo",
       descripcion:
-          'Es una plataforma tecnologica para el nivel secundaria y preparatoria',
-      image: 'assets/image/ofina-trabajo.png',
+          "Estudia en cualquier momento y de donde estes, estudia a tu ritmo",
     ),
     SliderPage(
-      title: 'Poner titulo aqui',
+      icon: FontAwesomeIcons.fileAlt,
+      title: 'Ejercicios constantes',
       descripcion:
-          'Contamos con un excelente plana de docentes, y las mejores herramientas para el aprendizaje',
-      image: 'assets/image/equipo-remoto.png',
+          'Resuelve ejercicios y mejora tu tecnica para resolver examenes en tiempo record',
+    ),
+    SliderPage(
+      icon: FontAwesomeIcons.chartLine,
+      title: 'Mira tu progreso',
+      descripcion:
+          'Mira tu progreso en transcurso de tu avance, analiza cada detalle para seguir mejorando',
     ),
   ]; //siempre despues de corchete cerrar con punto y coma ojo pero en <widget> solo cierra con coma
 
@@ -139,7 +140,7 @@ class _InicioAppState extends State<InicioApp> {
                                 );
                               },
                               child: Text(
-                                'Empezar',
+                                'Comenzar',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 23),
                               ),

@@ -17,9 +17,9 @@ class _LitState extends State<Lit> {
     return Scaffold(
       appBar:new AppBar(
         title: Text("Literatura"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFFAC162C),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xffFD637B),
       body: Container(
         padding: EdgeInsets.all(80.0),
         
@@ -59,7 +59,7 @@ class _LitState extends State<Lit> {
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.assignment,color: Colors.orange, size: 70.0,),
+                      Icon(Icons.assignment,color: Colors.red, size: 70.0,),
                       Text("PRÁCTICAS", style :new TextStyle(fontSize: 15.0))
                     ],
                   ),

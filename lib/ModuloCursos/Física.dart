@@ -17,9 +17,9 @@ class _FisState extends State<Fis> {
     return Scaffold(
       appBar:new AppBar(
         title: Text("Física"),
-        backgroundColor: Colors.orange,
+        backgroundColor: Color(0xFF6C157E),
       ),
-      backgroundColor: Colors.orange[300],
+      backgroundColor: Color(0xFFA626C0),
       body: Container(
         padding: EdgeInsets.all(80.0),
         
@@ -59,7 +59,7 @@ class _FisState extends State<Fis> {
                   child: Column(                    
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Icon(Icons.assignment,color: Colors.orange, size: 70.0,),
+                      Icon(Icons.assignment,color: Colors.purple, size: 70.0,),
                       Text("PRÁCTICAS", style :new TextStyle(fontSize: 15.0))
                     ],
                   ),
