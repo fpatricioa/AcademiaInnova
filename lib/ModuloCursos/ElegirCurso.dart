@@ -40,13 +40,14 @@ class _CursoState extends State<Curso> {
           ),
         padding: EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 10),
         child: GridView.count(
-          crossAxisCount: 2,
+          crossAxisCount: 3,
           children: <Widget>[
             Card(
               
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
+
               color: Color(0xffFED525),
               margin: EdgeInsets.all(18.0),
               child: InkWell(
@@ -60,7 +61,9 @@ class _CursoState extends State<Curso> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       //Icon(Icons.psychology_outlined, size: 70.0),
+
                       Item2(
+
                           icon: Icons.psychology_outlined,
                           title: "MATEMÁTICA",
                           color: 0xffFED525)
@@ -74,8 +77,10 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
+
               color: Color(0xffFD637B),
               margin: EdgeInsets.all(18.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -149,8 +154,10 @@ class _CursoState extends State<Curso> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
+
               color: Color(0xFFA8843F),
               margin: EdgeInsets.all(18.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -186,6 +193,7 @@ class _CursoState extends State<Curso> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+
                       Item2(
                           icon: Icons.history_edu,
                           title: "HISTORIA",
@@ -240,6 +248,7 @@ class _CursoState extends State<Curso> {
                           icon: Icons.science_outlined,
                           title: "QUÍMICA",
                           color: 0xFF38D323)
+
                     ],
                   ),
                 ),

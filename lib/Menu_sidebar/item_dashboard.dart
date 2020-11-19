@@ -23,6 +23,7 @@ class Item extends StatelessWidget {
             child: Icon(
               icon,
               size: 50,
+
               color: Colors.white,
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -60,6 +61,7 @@ class Item2 extends StatelessWidget {
             child: Icon(
               icon,
               size: 50,
+
               color: Colors.white,
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -67,7 +69,7 @@ class Item2 extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-                fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
+                fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
           )
         ],
       ),

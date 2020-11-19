@@ -48,12 +48,11 @@ dependencies:
   #DEPENDENCIAS PARA VIDEO
   youtube_player_flutter: ^7.0.0+7
 
-  
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
     
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -61,10 +60,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:

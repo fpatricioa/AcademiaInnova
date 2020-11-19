@@ -1,5 +1,4 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'LoginRegister/inicioLogin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:
           false, //esto es para ocultar la cinta de debug
       title: 'ACADEMIA',
-      home: rootPage, //esta clase lo creamos bajo
+      home: rootPage,
     );
   }
 }
@@ -40,27 +39,31 @@ class _InicioAppState extends State<InicioApp> {
 
   List<Widget> _pages = [
     SliderPage(
-      icon: FontAwesomeIcons.bookReader,
-      title: "ACADEMIA",
-      descripcion: "INNOVA",
+      image: "",
+      title: "",
+      descripcion: "",
+      color: Colors.green,
     ),
     SliderPage(
-      icon: FontAwesomeIcons.mendeley,
+      image: "assets/image/estudiaritmo.png",
       title: "Estudia a tu ritmo",
       descripcion:
           "Estudia en cualquier momento y de donde estes, estudia a tu ritmo",
+      color: Colors.green,
     ),
     SliderPage(
-      icon: FontAwesomeIcons.fileAlt,
+      image: "assets/image/practicas.png",
       title: 'Ejercicios constantes',
       descripcion:
           'Resuelve ejercicios y mejora tu tecnica para resolver examenes en tiempo record',
+      color: Colors.blue,
     ),
     SliderPage(
-      icon: FontAwesomeIcons.chartLine,
+      image: "assets/image/progreso.png",
       title: 'Mira tu progreso',
       descripcion:
           'Mira tu progreso en transcurso de tu avance, analiza cada detalle para seguir mejorando',
+      color: Colors.orange,
     ),
   ]; //siempre despues de corchete cerrar con punto y coma ojo pero en <widget> solo cierra con coma
 
@@ -69,6 +72,38 @@ class _InicioAppState extends State<InicioApp> {
       _currentPage =
           index; //aqui vemos el estado para pasar de una pantalla a otro
     });
+  }
+
+  Widget _imagen() {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/image/fondoonb1.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/image/Login.png',
+            //width: 200,
+            width: 250,
+            //color: Colors.orange,
+          ),
+          Text(
+            'ACADEMIA',
+            style: TextStyle(
+                fontSize: 55, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'INNOVA',
+            style: TextStyle(
+                fontSize: 45, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -83,7 +118,11 @@ class _InicioAppState extends State<InicioApp> {
             itemCount: _pages.length,
             onPageChanged: _onChanged,
             itemBuilder: (context, int index) {
-              return _pages[index];
+              if (_currentPage == 0) {
+                return _imagen();
+              } else {
+                return _pages[index];
+              }
             },
           ),
           //Creamos botoncitos de nav dentro de hijo widget
@@ -96,13 +135,13 @@ class _InicioAppState extends State<InicioApp> {
                   return AnimatedContainer(
                     duration: Duration(milliseconds: 300),
                     height: 10,
-                    width: (index == _currentPage) ? 30 : 10,
+                    width: (index == _currentPage) ? 50 : 10,
                     margin: EdgeInsets.symmetric(horizontal: 5, vertical: 30),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: (index == _currentPage)
-                            ? Colors.blue
-                            : Colors.blue.withOpacity(0.5)),
+                            ? Color(0xfff50057)
+                            : Color(0xfff50057).withOpacity(0.5)),
                   );
                 }),
               ),
@@ -121,7 +160,7 @@ class _InicioAppState extends State<InicioApp> {
                       ? 200
                       : 60, //con este -1 decimos que se haga el efecto de empezar en el ultimo activity
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Color(0xfff50057),
                     borderRadius: BorderRadius.circular(35),
                   ),
 

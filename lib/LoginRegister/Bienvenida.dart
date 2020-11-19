@@ -1,12 +1,13 @@
 import 'package:academiainnova/Examen_uno/principal.dart';
 import 'package:academiainnova/Menu_sidebar/dashboard.dart';
+import 'package:academiainnova/Modulo_Universidad/ElegirUniversidad.dart';
 import '../Menu_sidebar/perfil.dart';
 import 'package:academiainnova/ModuloCursos/ElegirCarrera.dart';
 import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:academiainnova/Modulo_Universidad/ElegirUniversidad.dart';
+
 class BienvenidaPage extends StatefulWidget {
   final User user;
 

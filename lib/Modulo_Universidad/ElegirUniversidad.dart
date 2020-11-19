@@ -3,7 +3,6 @@ import 'package:academiainnova/Modulo_Universidad/Universidad_CesarVallejo.dart'
 import 'package:academiainnova/ModuloCursos/ElegirCarrera.dart';
 import 'package:flutter/material.dart';
 
-
 class Universidad extends StatefulWidget {
   @override
   _UniversidadState createState() => _UniversidadState();
@@ -26,7 +25,6 @@ class _UniversidadState extends State<Universidad> {
                 end: Alignment.bottomCenter,
                 colors: [
                   //Color(0xFFFF7B43),
-                  
                   //Color(0xFFF5326F),
                   Color(0xFF5B16D0),
                   Color(0xFF5036D5),
@@ -149,6 +147,7 @@ class _UniversidadState extends State<Universidad> {
               ),
               color: Color(0xFFFA9C31),
               margin: EdgeInsets.all(15.0),
+
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -259,6 +258,7 @@ class _UniversidadState extends State<Universidad> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Icon(
+
                         Icons.home_work_rounded,
                         color: Colors.white,
                         size: 70.0,
@@ -269,7 +269,7 @@ class _UniversidadState extends State<Universidad> {
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
+                  ),   style: new TextStyle(fontSize: 15.0))
                     ],
                   ),
                 ),
