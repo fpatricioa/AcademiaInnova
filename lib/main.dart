@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'LoginRegister/inicioLogin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'slider.dart';
 
 Future<void> main() async {
@@ -11,17 +11,14 @@ Future<void> main() async {
 }
 
 @override
-// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   Widget rootPage = InicioApp();
-  //Widget rootPage = MyApplica();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:
-          false, //esto es para ocultar la cinta de debug
+      debugShowCheckedModeBanner: false,
       title: 'ACADEMIA',
-      home: rootPage, //esta clase lo creamos bajo
+      home: rootPage,
     );
   }
 }
@@ -32,7 +29,6 @@ class InicioApp extends StatefulWidget {
 }
 
 class _InicioAppState extends State<InicioApp> {
-  //declaramos las variables y inicalizamos
   // ignore: unused_field
   int _currentPage = 0;
   PageController _controller = PageController();

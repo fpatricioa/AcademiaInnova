@@ -46,7 +46,7 @@ class _YoutubeHomeState extends State<YoutubeHome> {
       if (!isLoading &&
           scontroller.position.pixels == scontroller.position.maxScrollExtent &&
           _channel.videos.length != int.parse(_channel.videoCount)) {
-        print('End');
+        //print('End');
         loadMoreVideo();
       }
     });
@@ -65,15 +65,16 @@ class _YoutubeHomeState extends State<YoutubeHome> {
             : Column(
                 children: [
                   Card(
+                    color: Colors.indigo,
                     child: Container(
                       height: 100,
-                      margin: EdgeInsets.all(20),
+                      margin: EdgeInsets.all(22),
                       padding: EdgeInsets.all(18),
                       child: Row(
                         children: [
                           CircleAvatar(
                             radius: 40,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.pink,
                             backgroundImage:
                                 NetworkImage(_channel.profilePictureUrl),
                           ),
@@ -86,21 +87,21 @@ class _YoutubeHomeState extends State<YoutubeHome> {
                                 Text(
                                   _channel.title,
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.grey.shade200,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20),
                                 ),
                                 Text(
                                   _channel.suscriberCount + "Seguidores",
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.yellow,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 18),
                                 ),
                                 Text(
                                   _channel.videoCount + "Video",
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.yellow,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 16),
                                 ),
@@ -113,7 +114,7 @@ class _YoutubeHomeState extends State<YoutubeHome> {
                   ),
                   //para eliminar los desbordamientos de pantalla las rayas de color amarillo y negro todo el listView meter dentro de un Conatiner
                   Container(
-                    color: Colors.green,
+                    color: Colors.indigo,
                     height: MediaQuery.of(context).size.height / 1.5,
                     child: ListView.builder(
                       shrinkWrap: true,

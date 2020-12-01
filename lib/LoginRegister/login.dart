@@ -105,15 +105,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _cargarOlvidoContrasenaBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: FlatButton(
-        
-      ),
-    );
-  }
-
   Widget _cargarLoginBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -184,8 +175,6 @@ class _LoginPageState extends State<LoginPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  //Color(0xFFFF7B43),
-                  //Color(0xFFF5326F),
                   Color(0xFF3594DD),
                   Color(0xFF4563DB),
                   Color(0xFF5036D5),
@@ -225,7 +214,18 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     _cargarEmail(),
                     _cargarContrasena(),
-                    _cargarOlvidoContrasenaBtn(),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        'Olvide mi Password',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
                     _cargarLoginBtn(),
                     _cargarCrearCuenta(),
                   ],

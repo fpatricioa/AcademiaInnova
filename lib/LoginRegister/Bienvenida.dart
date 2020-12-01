@@ -1,9 +1,9 @@
-import 'package:academiainnova/Examen_uno/principal.dart';
 import 'package:academiainnova/Menu_sidebar/dashboard.dart';
-import 'package:academiainnova/Modulo_Universidad/ElegirUniversidad.dart';
+import 'package:academiainnova/ModuloPractica/main.dart';
+import 'package:academiainnova/UniversidadDB/DetailsCursos.dart';
+import 'package:academiainnova/UniversidadDB/DetailsUniversity.dart';
+import 'package:academiainnova/UniversidadDB/University.dart';
 import '../Menu_sidebar/perfil.dart';
-import 'package:academiainnova/ModuloCursos/ElegirCarrera.dart';
-import 'package:academiainnova/ModuloCursos/ElegirCurso.dart';
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,6 +17,7 @@ class BienvenidaPage extends StatefulWidget {
 }
 
 class _BienvenidaPageState extends State<BienvenidaPage> {
+  // ignore: unused_field
   FirebaseAuth _auth = FirebaseAuth.instance;
   List<ScreenHiddenDrawer> itens = new List();
 
@@ -37,7 +38,7 @@ class _BienvenidaPageState extends State<BienvenidaPage> {
           baseStyle: TextStyle(color: Colors.white, fontSize: 20.0),
           colorLineSelected: Colors.orange,
         ),
-        Universidad()));
+        ListaDataBaseAcademia()));
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
@@ -45,7 +46,7 @@ class _BienvenidaPageState extends State<BienvenidaPage> {
           baseStyle: TextStyle(color: Colors.white, fontSize: 20.0),
           colorLineSelected: Colors.cyan,
         ),
-        Carrera()));
+        DetalleUniveridadPage()));//Elige carrera
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
@@ -53,7 +54,7 @@ class _BienvenidaPageState extends State<BienvenidaPage> {
           baseStyle: TextStyle(color: Colors.white, fontSize: 20.0),
           colorLineSelected: Colors.red,
         ),
-        Curso()));
+        DetallesCursosPage()));//eñoge curso
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
@@ -61,7 +62,7 @@ class _BienvenidaPageState extends State<BienvenidaPage> {
           baseStyle: TextStyle(color: Colors.white, fontSize: 20.0),
           colorLineSelected: Colors.deepPurple,
         ),
-        MyApplicativo()));
+        PracticePage()));
 
     itens.add(new ScreenHiddenDrawer(
         new ItemHiddenMenu(
