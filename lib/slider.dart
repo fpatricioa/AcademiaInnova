@@ -5,41 +5,25 @@ class SliderPage extends StatelessWidget {
   final String title;
   final String descripcion;
   final String image;
+  final Color color;
 
   //una ves creado inicalizamos con un constructor
-  SliderPage({this.title, this.descripcion, this.image});
+  SliderPage({this.title, this.descripcion, this.image, this.color});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [
-            0.1,
-            0.4,
-            0.7,
-            0.9
-          ],
-              colors: [
-            Color(0xFF3594DD),
-            Color(0xFF4563DB),
-            Color(0xFF5036D5),
-            Color(0xFF5B16D0),
-          ])),
-      //color: Colors.blue[200],
+      decoration: BoxDecoration(color: color),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Image.asset(
             image,
-            width: width * 0.9,
+            width: 260,
           ),
           SizedBox(
-            height: 15,
+            height: 25,
           ),
           Text(
             title,
@@ -50,16 +34,16 @@ class SliderPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
               descripcion,
               style: TextStyle(
                 color: Colors.white,
                 height: 1.5,
-                fontSize: 18,
+                fontSize: 20,
                 fontWeight: FontWeight.normal,
                 letterSpacing: 0.7,
               ),
