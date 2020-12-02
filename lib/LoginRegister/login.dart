@@ -20,10 +20,11 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _passwordController = TextEditingController();
+
   final items = <Widget>[
     DashboardPage()
   ]; //aqui se puede aumentar UnaPageMasParaCargarAlMismoTiempo()
-
+  
   Widget _cargarEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -194,9 +195,11 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
                 child: Column(
                   children: <Widget>[
+
                     Image.asset(
                       'assets/image/Login.png',
                       width: 160,
+
                     ),
                     SizedBox(
                       height: 15.0, //espacio
